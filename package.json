@@ -1,0 +1,16 @@
+{
+	"name": "ptns",
+	"main": "./Options.js",
+	"author": "rolandpoulter",
+	"version": "0.0.1",
+	"keywords": [],
+	"homepage": "https://github.com/rolandpoulter/js-options",
+	"repository": {"type": "git", "url": "git://github.com/rolandpoulter/js-options"},
+	"description": "",
+	"contributors": [],
+	"dependencies": {
+		"mrg": ">= 0.0.1",
+		"clss": ">= 0.0.1"
+	},
+	"devDependencies": {"spc": ">= 0.0.1"}
+}
