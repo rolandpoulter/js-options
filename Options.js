@@ -2,36 +2,36 @@
 
 "use strict";
 
-var merge = require('mrg');
+var util = {
+	merge: require('mrg'),
 
-function deepCreate (obj) {
-	var created = Object.create(obj),
-	    prop;
+	deepCreate: function deepCreate (object) {
+		var created = Object.create(object),
+		    property;
 
-	for (prop in obj) {
-		if (obj.hasOwnProperty(prop) && typeof obj[prop] === 'object') {
-			created[prop] = deepCreate(obj[prop]);
+		for (property in object) {
+			if (object.hasOwnProperty(property) && typeof object[property] === 'object') {
+				created[property] = deepCreate(object[property]);
+			}
 		}
-	}
 
-	return created;
+		return created;
+	}
 }
 
-var Options =
-
-module.exports = require('clss')('Options', function (def) {
+var Options = module.exports = require('clss')('Options', function (def) {
 	def.setOptions = function (options) {
 		this.options = this.options &&
 			this.options !== this.constructor.prototype.options ?
 				this.options : this.options ? Object.create(this.options) : {};
 
-		if (options) merge(this.options, options);
+		if (options) util.merge(this.options, options);
 
 		return this;
 	};
 
 	def.newOptions = function (options) {
-		this.options = deepCreate(this.options || (this.options = {}));
+		this.options = util.deepCreate(this.options || (this.options = {}));
 
 		return this.setOptions(options);
 	};
@@ -39,7 +39,4 @@ module.exports = require('clss')('Options', function (def) {
 
 Options.create(Options);
 
-Options.util = {
-	deepCreate: deepCreate,
-	merge: merge
-};
+Options.util = util;
