@@ -12,5 +12,6 @@
 		"mrg": ">= 0.0.1",
 		"clss": ">= 0.0.1"
 	},
-	"devDependencies": {"spc": ">= 0.0.1"}
+	"devDependencies": {"spc": ">= 0.0.1"},
+	"scripts": {"test": "node ./test.js"}
 }
