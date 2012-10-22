@@ -1,5 +1,5 @@
 module.exports = require('spc').describe('Options', function () {
-	var Options = require('./Options');
+	var Options = require('../Options');
 
 	before(function () {
 		should();

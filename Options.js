@@ -1,5 +1,3 @@
-/*jslint smarttabs:true */
-
 "use strict";
 
 var util = {
@@ -20,20 +18,20 @@ var util = {
 }
 
 var Options = module.exports = require('clss')('Options', function (def) {
-	def.setOptions = function (options) {
+	def.setOptions = function (options, iterator, that) {
 		this.options = this.options &&
 			this.options !== this.constructor.prototype.options ?
 				this.options : this.options ? Object.create(this.options) : {};
 
-		if (options) util.merge(this.options, options);
+		if (options) util.merge(this.options, options, iterator, that);
 
 		return this;
 	};
 
-	def.newOptions = function (options) {
+	def.newOptions = function (options, iterator, that) {
 		this.options = util.deepCreate(this.options || (this.options = {}));
 
-		return this.setOptions(options);
+		return this.setOptions(options, iterator, that);
 	};
 });
 

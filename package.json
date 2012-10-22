@@ -9,9 +9,8 @@
 	"description": "",
 	"contributors": [],
 	"dependencies": {
-		"mrg": ">= 0.0.1",
-		"clss": ">= 0.0.1"
+		"mrg": "0.0.1",
+		"clss": "0.0.1"
 	},
-	"devDependencies": {"spc": ">= 0.0.1"},
-	"scripts": {"test": "node ./test.js"}
+	"scripts": {"test": "node ./test"}
 }
