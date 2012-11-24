@@ -5,6 +5,10 @@ module.exports = require('spc').describe('Options', function () {
 		should();
 	});
 
+	it('should fail', function () {
+		assert(false);
+	});
+
 	describe('util#deepCreate', function () {
 		beforeEach(function () {
 			sinon.spy(Object, 'create');
